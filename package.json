@@ -2,7 +2,7 @@
   "name": "node",
   "version": "1.0.0",
   "description": "api para incriptografar em sha256",
-  "main": "encoder",
+  "main": "src/encoder.js",
   "dependencies": {
     "body-parser": "^1.20.2",
     "cords": "^1.0.4",
@@ -14,7 +14,7 @@
     "nodemon": "^2.0.22"
   },
   "scripts": {
-    "start": "nodemon encoder.js"
+    "start": "nodemon src/encoder.js"
   },
   "author": "",
   "license": "ISC"
