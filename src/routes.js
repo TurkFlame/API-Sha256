@@ -28,22 +28,22 @@ routes.post('/', (req, res) => {
         response.string_3 = sha256(string_3).toString()
     }
     if (string_4) {
-        response.string_1 = sha256(string_4).toString()
+        response.string_4 = sha256(string_4).toString()
     }
     if (string_5) {
-        response.string_2 = sha256(string_5).toString()
+        response.string_5 = sha256(string_5).toString()
     }
     if (string_6) {
-        response.string_3 = sha256(string_6).toString()
+        response.string_6 = sha256(string_6).toString()
     }
     if (string_7) {
-        response.string_1 = sha256(string_7).toString()
+        response.string_7 = sha256(string_7).toString()
     }
     if (string_8) {
-        response.string_2 = sha256(string_8).toString()
+        response.string_8 = sha256(string_8).toString()
     }
     if (string_9) {
-        response.string_3 = sha256(string_9).toString()
+        response.string_9 = sha256(string_9).toString()
     }
 
     return res.json(response)
