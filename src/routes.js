@@ -6,17 +6,47 @@ const sha256 = require('crypto-js/sha256');
 //Inserir dados
 
 routes.post('/', (req, res) => {
-    const { data, access_key, secret_key } = req.body
+    const string_1 = req.body.string_1
+    const string_2 = req.body.string_2
+    const string_3 = req.body.string_3
+    const string_4 = req.body.string_4
+    const string_5 = req.body.string_5
+    const string_6 = req.body.string_6
+    const string_7 = req.body.string_7
+    const string_8 = req.body.string_8
+    const string_9 = req.body.string_9
 
-    const dataHash = sha256(data)
-    const accessKeyHash = sha256(access_key)
-    const secretKeyHash = sha256(secret_key)
+    let response = {}
 
-    return res.json({
-        data: dataHash.toString(),
-        access_key: accessKeyHash.toString(),
-        secret_key: secretKeyHash.toString()
-    })
+    if (string_1) {
+        response.string_1 = sha256(string_1).toString()
+    }
+    if (string_2) {
+        response.string_2 = sha256(string_2).toString()
+    }
+    if (string_3) {
+        response.string_3 = sha256(string_3).toString()
+    }
+    if (string_4) {
+        response.string_1 = sha256(string_4).toString()
+    }
+    if (string_5) {
+        response.string_2 = sha256(string_5).toString()
+    }
+    if (string_6) {
+        response.string_3 = sha256(string_6).toString()
+    }
+    if (string_7) {
+        response.string_1 = sha256(string_7).toString()
+    }
+    if (string_8) {
+        response.string_2 = sha256(string_8).toString()
+    }
+    if (string_9) {
+        response.string_3 = sha256(string_9).toString()
+    }
+
+    return res.json(response)
 })
 
 module.exports = routes
