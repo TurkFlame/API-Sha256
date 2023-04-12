@@ -57,7 +57,7 @@ routes.post('/signature', (req, res) => {
     let service = req.body.service
     let string_to_sign = req.body.stringToSign
 
-    let kData = sha256("AWS4" + secret_key, data).toString()
+    let kDate = sha256("AWS4" + secret_key, data).toString()
     let kRegion = sha256(kDate, region).toString()
     let kService = sha256(kRegion, service).toString()
     let Ksigning = sha256(kService, "aws4_request").toString()
@@ -65,7 +65,7 @@ routes.post('/signature', (req, res) => {
 
     let corpo = {}
     corpo.signature = signature 
-    
+
     return res.json(corpo)
 
 })
