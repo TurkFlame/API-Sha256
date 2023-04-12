@@ -49,4 +49,24 @@ routes.post('/', (req, res) => {
     return res.json(response)
 })
 
+routes.post('/signature', (req, res) => {
+
+    let secret_key = req.body.secretKey
+    let data = req.body.data
+    let region = req.body.region
+    let service = req.body.service
+    let string_to_sign = req.body.string_to_sign
+
+    let kData = sha256("AWS4" + secret_key, data).toString()
+    let kRegion = sha256(kDate, region).toString()
+    let kService = sha256(kRegion, service).toString()
+    let Ksigning = sha256(kService, "aws4_request").toString()
+    let signature = sha256(Ksigning, string_to_sign).toString()
+
+    let corpo = {}
+    corpo.signature = signature 
+    return res.json(corpo)
+
+})
+
 module.exports = routes
